@@ -174,11 +174,24 @@ li ol {
 
 // Repositories
 
-@media (min-width: 768px) {
-  .repo {
-    max-width: 50%;
-  }
+// @media (min-width: 768px) {
+//   .repo {
+//     max-width: 50%;
+//   }
+// }
+
+.repositories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Dynamic grid */
+    gap: 20px; /* Space between items */
+    justify-items: center; /* Center align each repository */
 }
+
+.repo {
+    width: 100%; /* Ensures each repo takes full grid space */
+    max-width: 400px; /* Prevents overly wide items */
+}
+
 
 
 /*
