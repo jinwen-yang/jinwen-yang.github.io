@@ -1,10 +1,9 @@
 ---
-layout: page
+layout: archive
 permalink: /repositories/
-title: repositories
+title: "Repositories"
 description: Some software projects I contribute to / own.
-nav: true
-nav_order: 4
+author_profile: true
 ---
 
 {% if site.data.repositories.github_repos %}
