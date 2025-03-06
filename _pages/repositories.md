@@ -1,5 +1,5 @@
 ---
-layout: archive
+layout: page
 title: "Repositories"
 permalink: /repositories/
 author_profile: true
