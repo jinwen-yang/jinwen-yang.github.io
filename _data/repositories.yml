@@ -1,3 +1,6 @@
 github_repos:
   - jinwen-yang/cuPDLP.jl
   - jinwen-yang/PDQP.jl
+  - MIT-Lu-Lab/MPAX
+  - MIT-Lu-Lab/PDOT.jl
+  - MIT-Lu-Lab/SimplePDLP 
