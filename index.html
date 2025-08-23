@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jinwen Yang</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Space+Mono&display=swap');
+
+        :root {
+            --color-amber-50: #fffbeb;
+            --color-amber-100: #fef3c7;
+            --color-amber-800: #92400e;
+            --color-amber-900: #78350f;
+            --color-rose-50: #f5efd9;
+            --color-rose-800: #9f1239;
+            --color-rose-900: #881337;
+        }
+
+        body {
+            background-color: var(--color-amber-50);
+            /* font-family: 'Space Mono', monospace; */
+            font-family: 'Nata Sans', monospace;
+            color: var(--color-amber-900);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Libre Baskerville', serif;
+            font-weight: bold;
+        }
+
+        .nav-container {
+            background-color: var(--color-amber-900);
+            position: fixed;
+            width: 100%;
+            z-index: 50;
+            padding: 1rem 0;
+        }
+
+        .nav-content {
+            max-width: 1024px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            color: var(--color-amber-50);
+            font-size: 1.25rem;
+            font-family: 'Libre Baskerville', serif;
+        }
+
+        .nav-link {
+            color: var(--color-amber-50);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.3s;
+            padding: 0.5rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-link:hover {
+            color: var(--color-amber-100);
+        }
+
+        /* New dropdown styles */
+        /* .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: var(--color-amber-900);
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 0.375rem;
+            margin-top: 0.5rem;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        } */
+
+        .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: var(--color-amber-900);
+        min-width: 200px;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        z-index: 1;
+        border-radius: 0.375rem;
+        margin-top: 0.5rem;
+    }
+
+    /* Add padding to create a gap between button and menu */
+    .dropdown-content::before {
+        content: '';
+        position: absolute;
+        top: -10px;
+        left: 0;
+        right: 0;
+        height: 10px;
+    }
+
+    .dropdown.active .dropdown-content {
+        display: block;
+    }
+
+    .nav-link {
+        color: var(--color-amber-50);
+        text-decoration: none;
+        font-size: 0.875rem;
+        transition: color 0.3s;
+        padding: 0.5rem 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .nav-link:hover {
+        color: var(--color-amber-100);
+    }
+
+        /* Mobile menu styles */
+        .mobile-menu-button {
+            display: block;
+            color: var(--color-amber-50);
+            cursor: pointer;
+        }
+
+        .mobile-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background-color: var(--color-amber-900);
+            padding: 1rem;
+        }
+
+        .mobile-menu.show {
+            display: block;
+        }
+
+        @media (min-width: 768px) {
+            .mobile-menu-button {
+                display: none;
+            }
+        }
+
+        [data-lucide] {
+            width: 18px;
+            height: 18px;
+        }
+
+        .container {
+            max-width: 1024px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            padding-top: 5rem;
+        }
+
+        .hero-section {
+            text-align: center;
+            padding: 1rem 0;
+            /* padding: 3rem 0;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            align-items: center; */
+        }
+
+        /* @media (min-width: 768px) {
+            .hero-section {
+                grid-template-columns: auto 1fr;
+                text-align: left;
+            }
+        } */
+
+        .profile-image-container {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+
+        .bio-content p {
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        /* .bio-content {
+            max-width: 600px;
+        }
+
+        .bio-content p {
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .bio-content a {
+            color: var(--color-amber-900);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .bio-content a:hover {
+            color: var(--color-amber-800);
+        } */
+
+        .profile-image-shadow {
+            position: absolute;
+            inset: 0;
+            border: 2px solid var(--color-amber-900);
+            transform: translate(0.5rem, 0.5rem);
+        }
+
+        .profile-image {
+            position: relative;
+            width: 26rem;
+            height: 26rem;
+            object-fit: cover;
+            border: 2px solid var(--color-amber-900);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--color-amber-900);
+            text-align: center;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+        }
+
+        .card {
+            border: 2px solid var(--color-amber-900);
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            background-color: var(--color-amber-50);
+            /* font-weight: bold; */
+        }
+
+        .card-rose {
+            border-color: var(--color-rose-900);
+            background-color: var(--color-rose-50);
+        }
+
+        .card-rose h3 {
+            color: var(--color-rose-900);
+        }
+
+        .card-rose p {
+            color: var(--color-amber-800);
+            font-weight: bold;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            font-size: 0.875rem;
+            border: 2px solid var(--color-amber-900);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background-color: var(--color-amber-900);
+            color: var(--color-amber-50);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--color-amber-800);
+        }
+
+        .btn-secondary {
+            background-color: var(--color-amber-50);
+            color: var(--color-amber-900);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--color-amber-100);
+        }
+
+        .link-icon {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .grid-2 {
+            display: grid;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .grid-2 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .publication-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 2px solid var(--color-amber-900);
+        }
+
+        .publication-link {
+            color: var(--color-amber-900);
+            text-decoration: none;
+            font-size: 0.875rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .publication-link:hover {
+            color: var(--color-amber-800);
+        }
+
+        footer {
+            background-color: var(--color-amber-900);
+            color: var(--color-amber-50);
+            padding: 2rem 0;
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .contact-info {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            justify-content: center;
+        }
+
+        .tldr-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+        /*background-color: var(--color-amber-100);*/
+        /*margin: 0 -1rem;*/
+        margin-top: .5rem; /* Add space between links and content */
+    }
+
+    .tldr-content.expanded {
+        max-height: 500px;
+    }
+
+    .tldr-button {
+        background: none;
+        border: none;
+        color: var(--color-amber-900);
+        font-family: 'Space Mono', monospace;
+        font-size: 0.875rem;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.25rem;
+    }
+
+    .tldr-button:hover {
+        color: var(--color-amber-800);
+    }
+
+    .chevron-icon {
+        transition: transform 0.3s ease;
+    }
+
+    .chevron-icon.expanded {
+        transform: rotate(180deg);
+    }
+
+    /* section#publications, section#software {
+        padding-top: 0rem;
+        padding-bottom: 0rem;
+    } */
+    
+    .section-title.mt-12 {
+        margin-top: 1rem;
+    }
+    
+    .space-y-6 {
+        --tw-space-y-reverse: 0;
+        margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
+        margin-bottom: calc(1rem * var(--tw-space-y-reverse));
+    }
+
+    @media (max-width: 768px) {
+        /* Styles that only apply when screen width is 768px or less */
+        .hero-section {
+            padding: 1.5rem 0; /* Less padding on mobile */
+        }
+        
+        .grid-2 {
+            gap: 1rem; /* Smaller gap between grid items on mobile */
+        }
+        
+        .profile-image {
+            width: 14rem; /* Smaller profile image on mobile */
+            height: 14rem;
+        }
+        
+        /* Make cards stack better on mobile */
+        .card {
+            padding: 1rem;
+        }
+
+        .bio-content p {
+            text-align: left;
+        }
+    }
+    </style>
+</head>
+<body>
+
+   
+
+    <nav class="nav-container">
+        <div class="nav-content">
+            <div class="flex items-center">
+                <!-- <a href="#" class="nav-brand">Jinwen Yang</a> -->
+            </div>
+
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex items-center space-x-4">
+                
+                <!-- External Links -->
+                <!-- <a href="Jinwen_Yang_CV.pdf" class="nav-link" target="_blank">
+                    <i data-lucide="file-text"></i>
+                    <span>C.V.</span>
+                </a> -->
+                <a href="https://scholar.google.com/citations?user=ix-D3vcAAAAJ" class="nav-link" target="_blank">
+                    <i data-lucide="library"></i>
+                    <span>Google Scholar</span>
+                </a>
+                <a href="https://github.com/jinwen-yang" class="nav-link" target="_blank">
+                    <i data-lucide="github"></i>
+                    <span>Github</span>
+                </a>
+                <a href="mailto:jinweny@uchicago.edu" class="nav-link" target="_blank">
+                    <i data-lucide="mail"></i>
+                    <span>Contact</span>
+                </a>
+                
+                <!-- Sections Dropdown -->
+                <div class="dropdown" id="sectionsDropdown">
+                    <button class="nav-link" onclick="toggleDropdown(event)">
+                        <i data-lucide="menu"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="#home" class="nav-link">
+                            <i data-lucide="home"></i>
+                            <span>Home</span>
+                        </a>
+                        <a href="#researchinterest" class="nav-link">
+                            <i data-lucide="book-open"></i>
+                            <span>Research Interests</span>
+                        </a>
+                        <a href="#publications" class="nav-link">
+                            <i data-lucide="book-open"></i>
+                            <span>Publications</span>
+                        </a>
+                        <a href="#preprints" class="nav-link">
+                            <i data-lucide="file-text"></i>
+                            <span>Select Preprints</span>
+                        </a>
+                        <a href="#software" class="nav-link">
+                            <i data-lucide="code"></i>
+                            <span>Software</span>
+                        </a>
+                    </div>
+                </div>
+
+                <script>
+                    function toggleDropdown(event) {
+                        event.stopPropagation();
+                        const dropdown = document.getElementById('sectionsDropdown');
+                        dropdown.classList.toggle('active');
+                    }
+                
+                    // Close dropdown when clicking outside
+                    document.addEventListener('click', function(event) {
+                        const dropdown = document.getElementById('sectionsDropdown');
+                        if (!dropdown.contains(event.target)) {
+                            dropdown.classList.remove('active');
+                        }
+                    });
+                
+                    // Keep dropdown open when clicking inside
+                    const dropdownContent = document.querySelector('.dropdown-content');
+                    dropdownContent.addEventListener('click', function(event) {
+                        event.stopPropagation();
+                    });
+                </script>
+                
+
+                
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-button md:hidden" onclick="toggleMobileMenu()">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu md:hidden" id="mobileMenu">
+            <a href="#home" class="nav-link block">
+                <i data-lucide="home"></i>
+                <span>Home</span>
+            </a>
+            <a href="#researchinterest" class="nav-link block">
+                <i data-lucide="book-open"></i>
+                <span>Research Interest</span>
+            </a>
+            <a href="#publications" class="nav-link block">
+                <i data-lucide="book-open"></i>
+                <span>Publications</span>
+            </a>
+            <a href="#preprints" class="nav-link block">
+                <i data-lucide="file-text"></i>
+                <span>Select Preprints</span>
+            </a>
+            <a href="#software" class="nav-link block">
+                <i data-lucide="code"></i>
+                <span>Software</span>
+            </a>
+            <div class="border-t border-amber-800 my-2"></div>
+            <!-- <a href="Jinwen_Yang_CV.pdf" class="nav-link block" target="_blank">
+                <i data-lucide="file-text"></i>
+                <span>C.V.</span>
+            </a> -->
+            <a href="https://scholar.google.com/citations?user=1KaPl5wAAAAJ" class="nav-link block" target="_blank">
+                <i data-lucide="library"></i>
+                <span>Scholar</span>
+            </a>
+            <a href="https://github.com/jinwen-yang" class="nav-link block" target="_blank">
+                <i data-lucide="github"></i>
+                <span>Github</span>
+            </a>
+            <a href="mailto:jinweny@uchicago.edu" class="nav-link block" target="_blank">
+                <i data-lucide="mail"></i>
+                <span>Contact</span>
+            </a>
+        </div>
+    </nav>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('show');
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobileMenu');
+                    if (mobileMenu.classList.contains('show')) {
+                        mobileMenu.classList.remove('show');
+                    }
+                }
+            });
+        });
+    </script>
+
+    <main class="container">
+        <section id="home" class="hero-section">
+            <div class="profile-image-container mt-12">
+                <div class="profile-image-shadow"></div>
+                <img src="Jinwen-Yang.jpg" alt="Jinwen Yang" class="profile-image">
+            </div>
+            
+            <div class="bio-content">
+                <h1 class="section-title">Jinwen Yang</h1> 
+                <p>
+                    I am a final-year PhD student in the Department of Statistics at University of Chicago, advised by Prof. <a href="https://mitmgmtfaculty.mit.edu/hlu/" target=&ldquo;blank&rdquo;>Haihao Lu</a>. Previously, I obtained my B.S. in Mathematics and Applied Mathematics from Fudan University.  <br><br>
+
+                    My research focuses on developing computational and mathematical methods for large-scale optimization in operations research, data science, and machine learning. Specifically, I am interested in: (i) designing algorithms that are well-suited to modern computational infrastructure, such as GPUs; and (ii) developing accessible, open-source software that facilitates seamless GPU integration in practical applications. Portions of my work have been adopted and integrated into several leading technology companies and commercial solvers, including Gurobi, NVIDIA, Cardinal Optimizer (COPT), FICO Xpress, Artelys Knitro, and others.
+                </p>
+            </div>
+        </section>
+
+        <section id="researchinterest" class="py-12">
+            <h2 class="section-title mt-12">
+                <span>Research Interests</span>
+            </h2>
+            <div class="grid-2">
+                <div class="card card-rose">
+                    <h2 class="text-xl mb-4 text-center flex items-center justify-center gap-2">
+                        <i data-lucide="square-code"></i>
+                        <span>Computation</span>
+                    </h2>
+                    <p class="text-sm text-center">Harnessing modern computational infrastructure such as GPUs</p>
+                </div>
+                <div class="card card-rose">
+                    <h2 class="text-xl mb-4 text-center flex items-center justify-center gap-2">
+                        <i data-lucide="book-open"></i>
+                        <span>Methodology & Theory</span>
+                    </h2>
+                    <p class="text-sm text-center">Designing algorithms tailored for modern hardware, with rigorous theoretical foundations</p>
+                </div>
+            </div>
+            <div class="card card-rose">
+                <h2 class="text-xl mb-4 text-center flex items-center justify-center gap-2">
+                    <i data-lucide="wrench"></i>
+                    Applications
+                </h2>
+                <p class="text-sm text-center">Accelerating solving of real-world problems in operations research, engineering and data science.</p>
+            </div>
+        </section>
+
+        <section id="publications" class="py-12">
+            <h2 class="section-title mt-12">
+                <!-- <i data-lucide="scroll-text"></i> -->
+                <span>Publications</span>
+            </h2>
+            
+            <div class="space-y-6">
+                <div class="card">
+                    <h3 class="text-xl mb-2">cuPDLP. jl: A GPU implementation of restarted primal-dual hybrid gradient for linear programming in Julia
+                    </h3>
+                    <p class="text-sm mb-2">H. Lu and J. Yang</p>
+                    <p class="text-sm italic mb-4">To appear in Operations Research.</p>
+                    <div class="publication-links">
+                        <a href="https://arxiv.org/abs/2311.12180" class="publication-link" target=&ldquo;blank&rdquo;>
+                            <i data-lucide="file-text"></i>
+                            <span>preprint</span>
+                        </a>
+                        <a href="https://github.com/jinwen-yang/cuPDLP.jl" class="publication-link" target=&ldquo;blank&rdquo;>
+                            <i data-lucide="github"></i>
+                            <span>software</span>
+                        </a>
+                        <button class="tldr-button" onclick="toggleTldr(this)">
+                            <i data-lucide="chevron-down" class="chevron-icon"></i>
+                            <span>TL;DR</span>
+                        </button>
+                    </div>
+                    <div class="tldr-content">
+                        <div class="p-4">
+                            <p class="text-sm">
+                                cuPDLP.jl is the first open-source GPU-based solver for linear programming using restarted PDHG, offering a new horse in the race alongside commercial solvers like Gurobi. It shows that first-order methods on GPUs can scale efficiently and solve large LPs with competitive performance.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3 class="text-xl mb-2">A Practical and Optimal First-Order Method for Large-Scale Convex Quadratic Programming</h3>
+                    <p class="text-sm mb-2">H. Lu and J. Yang</p>
+                    <p class="text-sm italic mb-4">To appear in Mathematical Programming.</p>
+                    
+                    <div class="publication-links">
+                        <a href="https://arxiv.org/abs/2311.07710" class="publication-link" target=&ldquo;blank&rdquo;>
+                            <i data-lucide="file-text"></i>
+                            <span>preprint</span>
+                        </a>
+                        <a href="https://link.springer.com/article/10.1007/s10107-025-02241-0" class="publication-link" target=&ldquo;blank&rdquo;>
+                            <i data-lucide="book-open"></i>
+                            <span>paper</span>
+                        </a>
+                        <a href="https://github.com/jinwen-yang/PDQP.jl" class="publication-link" target=&ldquo;blank&rdquo;>
+                            <i data-lucide="github"></i>
+                            <span>software</span>
+                        </a>
+                        <button class="tldr-button" onclick="toggleTldr(this)">
+                            <i data-lucide="chevron-down" class="chevron-icon"></i>
+                            <span>TL;DR</span>
+                        </button>
+                    </div>
+            
+                    <div class="tldr-content">
+                        <div class="p-4">
+                            <p class="text-sm">
+                                We propose a restarted and accelerated first-order method for solving large-scale convex quadratic programs, which achieves optimal linear convergence and is fully factorization-free. Backed by the theory, the open-source solver PDQP.jl delivers strong performance on both CPU and GPU across standard and large-scale QP benchmarks.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="text-xl mb-2">On the geometry and refined rate of primal–dual hybrid gradient for linear programming</h3>
+                    <p class="text-sm mb-2">H. Lu and J. Yang</p>
+                    <p class="text-sm italic mb-4">Mathematical Programming, 212, 349–387 (2025).</p>
+                    
+                    <div class="publication-links">
+                        <a href="https://arxiv.org/abs/2307.03664" class="publication-link" target=&ldquo;blank&rdquo;>
+                            <i data-lucide="file-text"></i>
+                            <span>preprint</span>
+                        </a>
+                        <a href="https://link.springer.com/article/10.1007/s10107-024-02109-9" class="publication-link" target=&ldquo;blank&rdquo;>
+                            <i data-lucide="book-open"></i>
+                            <span>paper</span>
+                        </a>
+                        <button class="tldr-button" onclick="toggleTldr(this)">
+                            <i data-lucide="chevron-down" class="chevron-icon"></i>
+                            <span>TL;DR</span>
+                        </button>
+                    </div>
+            
+                    <div class="tldr-content">
+                        <div class="p-4">
+                            <p class="text-sm">
+                                We provide the refined complexity analysis of the primal-dual hybrid gradient (PDHG) method for linear programming, revealing a two-stage convergence behavior driven by local geometry rather than the loose global Hoffman constant. Our results explain why PDHG scales efficiently in practice, even for degenerate LPs.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="card">
+                    <h3 class="text-xl mb-2">A&nbsp; J-symmetric quasi-newton method for minimax problems
+                    </h3>
+                    <p class="text-sm mb-2">A. Asl, H. Lu and J. Yang</p>
+                    <p class="text-sm italic mb-4">Mathematical Programming, 204, 207–254 (2024).</p>
+                    
+                    <div class="publication-links">
+                        <a href="https://arxiv.org/abs/2202.02279" class="publication-link" target=&ldquo;blank&rdquo;>
+                            <i data-lucide="file-text"></i>
+                            <span>preprint</span>
+                        </a>
+                        <a href="http://link.springer.com/article/10.1007/s10107-023-01957-1" class="publication-link" target=&ldquo;blank&rdquo;>
+                            <i data-lucide="book-open"></i>
+                            <span>paper</span>
+                        </a>
+                        <button class="tldr-button" onclick="toggleTldr(this)">
+                            <i data-lucide="chevron-down" class="chevron-icon"></i>
+                            <span>TL;DR</span>
+                        </button>
+                    </div>
+            
+                    <div class="tldr-content">
+                        <div class="p-4">
+                            <p class="text-sm">
+                                We propose a novel quasi-Newton method tailored for minimax optimization by leveraging the J-symmetric structure of the problem's second-order derivatives. Our method generalizes the PSB update, ensures efficient and stable rank-2 updates, and achieves both local superlinear and global convergence.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="text-xl mb-2">Dimensionality reduction for single cell RNA sequencing data using constrained robust non-negative matrix factorization</h3>
+                    <p class="text-sm mb-2">S. Zhang, L. Yang, J. Yang, Z. Lin and M. K. Ng</p>
+                    <p class="text-sm italic mb-4">NAR genomics and bioinformatics, 2.3 (2020).</p>
+                    
+                    <div class="publication-links">
+                        <a href="https://academic.oup.com/nargab/article/2/3/lqaa064/5898589" class="publication-link" target=&ldquo;blank&rdquo;>
+                            <i data-lucide="book-open"></i>
+                            <span>paper</span>
+                        </a>
+                        <!-- <button class="tldr-button" onclick="toggleTldr(this)">
+                            <i data-lucide="chevron-down" class="chevron-icon"></i>
+                            <span>TL;DR</span>
+                        </button> -->
+                    </div>
+            
+                    <!-- <div class="tldr-content">
+                        <div class="p-4">
+                            <p class="text-sm">
+
+                            </p>
+                        </div>
+                    </div> -->
+                </div>
+
+            </div>
+        </section>
+            
+        <section id="preprints" class="py-12">
+            <h2 class="section-title mt-12">
+                <!-- <i data-lucide="scroll-text"></i> -->
+                <span>Select Preprints</span>
+            </h2>
+
+            <div class="space-y-6">
+                <div class="card">
+                    <h3 class="text-xl mb-2">An Overview of GPU-based First-Order Methods for Linear Programming and Extensions</h3>
+                    <p class="text-sm mb-2">H. Lu and J. Yang</p>
+                    <div class="publication-links">
+                        <a href="https://arxiv.org/abs/2506.02174" class="publication-link" target=&ldquo;blank&rdquo;>
+                            <i data-lucide="file-text"></i>
+                            <span>preprint</span>
+                        </a>
+                        <button class="tldr-button" onclick="toggleTldr(this)">
+                            <i data-lucide="chevron-down" class="chevron-icon"></i>
+                            <span>TL;DR</span>
+                        </button>
+                    </div>
+            
+                    <div class="tldr-content">
+                        <div class="p-4">
+                            <p class="text-sm">
+                                We overview the emerging field of GPU-based first-order methods for linear programming, with a focus on the design, theory, and performance of cuPDLP. This work positions GPU-accelerated solvers as a scalable, competitive alternative to traditional CPU-based methods, opening new possibilities for large-scale optimization based on GPUs.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="card">
+                        <h3 class="text-xl mb-2">cuPDLP+: A Further Enhanced GPU-Based First-Order Solver for Linear Programming</h3>
+                        <p class="text-sm mb-2">H. Lu, Z. Peng and J. Yang</p>
+                        <div class="publication-links">
+                            <a href="https://arxiv.org/abs/2507.14051" class="publication-link" target=&ldquo;blank&rdquo;>
+                                <i data-lucide="file-text"></i>
+                                <span>preprint</span>
+                            </a>
+                            <button class="tldr-button" onclick="toggleTldr(this)">
+                                <i data-lucide="chevron-down" class="chevron-icon"></i>
+                                <span>TL;DR</span>
+                            </button>
+                        </div>
+                
+                        <div class="tldr-content">
+                            <div class="p-4">
+                                <p class="text-sm">
+                                    cuPDLP+ is a new GPU-based linear programming solver incorporating recent algorithmic advances like the restarted Halpern PDHG method and a PID-controlled primal weight update. These innovations, specifically tailored for GPU architectures, result in a 2x to 4x speedup over cuPDLP on standard LP benchmark datasets. The improvements are most pronounced in high-accuracy settings and on harder problem instances.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                <div class="card">
+                    <h3 class="text-xl mb-2">New Understandings and Computation on Augmented Lagrangian Methods for Low-Rank Semidefinite Programming
+                    </h3>
+                    <p class="text-sm mb-2">L. Ding, H. Lu and J. Yang</p>
+                    <div class="publication-links">
+                        <a href="https://arxiv.org/abs/2505.15775" class="publication-link" target=&ldquo;blank&rdquo;>
+                            <i data-lucide="file-text"></i>
+                            <span>preprint</span>
+                        </a>
+                        <button class="tldr-button" onclick="toggleTldr(this)">
+                            <i data-lucide="chevron-down" class="chevron-icon"></i>
+                            <span>TL;DR</span>
+                        </button>
+                    </div>
+            
+                    <div class="tldr-content">
+                        <div class="p-4">
+                            <p class="text-sm">
+                                We establish new theoretical foundations for augmented Lagrangian methods (ALM) in low-rank semidefinite programming by showing that ALM subproblems inherit key structural properties from the original SDP and can be solved globally via gradient descent. Building on these insights, we design ALORA, a GPU-accelerated, rank-adaptive solver that scales to SDPs with tens of millions of variables.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="text-xl mb-2">MPAX: Mathematical Programming in JAX
+
+                    </h3>
+                    <p class="text-sm mb-2">H. Lu, Z. Peng and J. Yang</p>
+                    <div class="publication-links">
+                        <a href="https://arxiv.org/abs/2412.09734" class="publication-link" target=&ldquo;blank&rdquo;>
+                            <i data-lucide="file-text"></i>
+                            <span>preprint</span>
+                        </a>
+                        <a href="https://github.com/MIT-Lu-Lab/MPAX" class="publication-link" target=&ldquo;blank&rdquo;>
+                            <i data-lucide="github"></i>
+                            <span>software</span>
+                        </a>
+                        <button class="tldr-button" onclick="toggleTldr(this)">
+                            <i data-lucide="chevron-down" class="chevron-icon"></i>
+                            <span>TL;DR</span>
+                        </button>
+                    </div>
+            
+                    <div class="tldr-content">
+                        <div class="p-4">
+                            <p class="text-sm">
+                                MPAX is a JAX-based mathematical programming solver optimized for machine learning workflows, offering GPU-accelerated, batchable, and differentiable first-order methods. It features such as warm start, auto-diff, and device parallelism.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="text-xl mb-2">Restarted Halpern PDHG for Linear Programming
+                    </h3>
+                    <p class="text-sm mb-2">H. Lu and J. Yang</p>
+                    <div class="publication-links">
+                        <a href="https://arxiv.org/abs/2407.16144" class="publication-link" target=&ldquo;blank&rdquo;>
+                            <i data-lucide="file-text"></i>
+                            <span>preprint</span>
+                        </a>
+                        <button class="tldr-button" onclick="toggleTldr(this)">
+                            <i data-lucide="chevron-down" class="chevron-icon"></i>
+                            <span>TL;DR</span>
+                        </button>
+                    </div>
+            
+                    <div class="tldr-content">
+                        <div class="p-4">
+                            <p class="text-sm">
+                                We propose restarted Halpern PDHG, a matrix-free primal-dual algorithm for linear programming, which achieves accelerated convergence for both feasible and infeasible LPs. Our GPU-based solver built on the proposed algorithm outperforms existing matrix-free methods like cuPDLP, offering practical speedups and refined theoretical guarantees including two-stage acceleration and improved infeasibility detection.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="text-xl mb-2">cuPDLP-C: A strengthened implementation of cuPDLP for linear programming by C language</h3>
+                    <p class="text-sm mb-2">H. Lu, J. Yang, H. Hu, Q. Huangfu, J. Liu, T. Liu, Y. Ye, C. Zhang and D. Ge</p>
+                    <div class="publication-links">
+                        <a href="https://arxiv.org/abs/2312.14832" class="publication-link" target=&ldquo;blank&rdquo;>
+                            <i data-lucide="file-text"></i>
+                            <span>preprint</span>
+                        </a>
+                        <a href="https://github.com/COPT-Public/cuPDLP-C" class="publication-link" target=&ldquo;blank&rdquo;>
+                            <i data-lucide="github"></i>
+                            <span>software</span>
+                        </a>
+                        <button class="tldr-button" onclick="toggleTldr(this)">
+                            <i data-lucide="chevron-down" class="chevron-icon"></i>
+                            <span>TL;DR</span>
+                        </button>
+                    </div>
+            
+                    <div class="tldr-content">
+                        <div class="p-4">
+                            <p class="text-sm">
+                                cuPDLP-C brings GPU-accelerated first-order methods for linear programming to new heights by reimplementing cuPDLP in C, achieving major speedups over the Julia version and demonstrating competitiveness, even outperforming commercial solvers, on massive LP benchmarks.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="text-xl mb-2">On a Unified and Simplified Proof for the Ergodic Convergence Rates of PPM, PDHG and ADMM
+                    </h3>
+                    <p class="text-sm mb-2">H. Lu and J. Yang</p>
+                    <div class="publication-links">
+                        <a href="https://arxiv.org/abs/2305.02165" class="publication-link" target=&ldquo;blank&rdquo;>
+                            <i data-lucide="file-text"></i>
+                            <span>preprint</span>
+                        </a>
+                        <button class="tldr-button" onclick="toggleTldr(this)">
+                            <i data-lucide="chevron-down" class="chevron-icon"></i>
+                            <span>TL;DR</span>
+                        </button>
+                    </div>
+            
+                    <div class="tldr-content">
+                        <div class="p-4">
+                            <p class="text-sm">
+                                Motivated by the desire for a teachable explanation in a graduate course, we develop a unified perspective showing that PPM, PDHG, and ADMM are all instances of the same generic algorithm under a norm change, clarifying intuition and enabling a four-line proof of their convergence rates.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        
+
+        <h2 class="section-title mt-12">
+            <!--<i data-lucide="code"></i>-->
+            <span>Software</span>
+        </h2>
+        <section id="software" class="grid-2 py-1">
+            <div class="card card-rose text-center">
+                <h2 class="text-xl mb-4">cuPDLP</h2>
+                <p class="text-sm mb-6">
+                    A GPU-based solver for linear programming using first-order methods
+                </p>
+                <a href="https://github.com/jinwen-yang/cuPDLP.jl" class="btn btn-primary" target=&ldquo;blank&rdquo;>
+                    <i data-lucide="github"></i>
+                    <span>cuPDLP.jl</span>
+                </a>
+                <a href="https://github.com/COPT-Public/cuPDLP-C" class="btn btn-primary" target=&ldquo;blank&rdquo;>
+                    <i data-lucide="github"></i>
+                    <span>cuPDLP-C</span>
+                </a>
+            </div>
+            <div class="card card-rose text-center">
+                <h2 class="text-xl mb-4">PDQP.jl</h2>
+                <p class="text-sm mb-6">
+                    A GPU-based solver for quadratic programming using first-order methods
+                </p>
+                <a href="https://github.com/jinwen-yang/PDQP.jl" class="btn btn-primary" target=&ldquo;blank&rdquo;>
+                    <i data-lucide="github"></i>
+                    <span>View on Github</span>
+                </a>
+            </div>
+            <div class="card card-rose text-center">
+                <h2 class="text-xl mb-4">MPAX</h2>
+                <p class="text-sm mb-6">
+                    A hardware-accelerated toolbox for solving mathematical programming in JAX
+                </p>
+                <a href="https://github.com/MIT-Lu-Lab/MPAX" class="btn btn-primary" target=&ldquo;blank&rdquo;>
+                    <i data-lucide="github"></i>
+                    <span>View on GitHub</span>
+                </a>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="contact-info mb-4">
+                <i data-lucide="map-pin"></i>
+                <span>University of Chicago</span>
+            </div>
+            <p class="text-sm">© 2025 Jinwen Yang</p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+
+<script>
+    function toggleTldr(button) {
+    // Go up to find the card, then find the tldr-content within it
+    const card = button.closest('.card');
+    const content = card.querySelector('.tldr-content');
+    const chevron = button.querySelector('.chevron-icon');
+    
+    content.classList.toggle('expanded');
+    chevron.classList.toggle('expanded');
+    }
+</script>
+
+</body>
+</html>
