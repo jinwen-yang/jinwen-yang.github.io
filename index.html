@@ -830,12 +830,16 @@
 
                 <div class="space-y-6">
                     <div class="card">
-                        <h3 class="text-xl mb-2">cuPDLP+: A Further Enhanced GPU-Based First-Order Solver for Linear Programming</h3>
+                        <h3 class="text-xl mb-2">cuPDLPx: A Further Enhanced GPU-Based First-Order Solver for Linear Programming</h3>
                         <p class="text-sm mb-2">H. Lu, Z. Peng and J. Yang</p>
                         <div class="publication-links">
                             <a href="https://arxiv.org/abs/2507.14051" class="publication-link" target=&ldquo;blank&rdquo;>
                                 <i data-lucide="file-text"></i>
                                 <span>preprint</span>
+                            </a>
+                            <a href="https://github.com/MIT-Lu-Lab/cuPDLPx" class="publication-link" target=&ldquo;blank&rdquo;>
+                                <i data-lucide="github"></i>
+                                <span>software</span>
                             </a>
                             <button class="tldr-button" onclick="toggleTldr(this)">
                                 <i data-lucide="chevron-down" class="chevron-icon"></i>
@@ -846,7 +850,7 @@
                         <div class="tldr-content">
                             <div class="p-4">
                                 <p class="text-sm">
-                                    cuPDLP+ is a new GPU-based linear programming solver incorporating recent algorithmic advances like the restarted Halpern PDHG method and a PID-controlled primal weight update. These innovations, specifically tailored for GPU architectures, result in a 2x to 4x speedup over cuPDLP on standard LP benchmark datasets. The improvements are most pronounced in high-accuracy settings and on harder problem instances.
+                                    cuPDLPx is a new GPU-based linear programming solver incorporating recent algorithmic advances like the restarted Halpern PDHG method and a PID-controlled primal weight update. These innovations, specifically tailored for GPU architectures, result in a 2x to 6x speedup over cuPDLP on standard LP benchmark datasets. The improvements are most pronounced in high-accuracy settings and on harder problem instances.
                                 </p>
                             </div>
                         </div>
@@ -930,6 +934,34 @@
                 </div>
 
                 <div class="card">
+                    <h3 class="text-xl mb-2">PDOT: A practical primal-dual algorithm and a GPU-based solver for optimal transport
+                    </h3>
+                    <p class="text-sm mb-2">H. Lu and J. Yang</p>
+                    <div class="publication-links">
+                        <a href="https://arxiv.org/abs/2407.19689" class="publication-link" target=&ldquo;blank&rdquo;>
+                            <i data-lucide="file-text"></i>
+                            <span>preprint</span>
+                        </a>
+                        <a href="https://github.com/MIT-Lu-Lab/PDOT.jl" class="publication-link" target=&ldquo;blank&rdquo;>
+                            <i data-lucide="github"></i>
+                            <span>software</span>
+                        </a>
+                        <button class="tldr-button" onclick="toggleTldr(this)">
+                            <i data-lucide="chevron-down" class="chevron-icon"></i>
+                            <span>TL;DR</span>
+                        </button>
+                    </div>
+            
+                    <div class="tldr-content">
+                        <div class="p-4">
+                            <p class="text-sm">
+                                We develop PDOT, a first-order method for large-scale discrete optimal transport that exploits problem structure for efficiency. It offers provable local linear convergence with polynomial complexity, and the open-source PDOT.jl delivers order-of-magnitude speedups over Gurobi while achieving much higher accuracy than Sinkhorn on benchmarks.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
                     <h3 class="text-xl mb-2">cuPDLP-C: A strengthened implementation of cuPDLP for linear programming by C language</h3>
                     <p class="text-sm mb-2">H. Lu, J. Yang, H. Hu, Q. Huangfu, J. Liu, T. Liu, Y. Ye, C. Zhang and D. Ge</p>
                     <div class="publication-links">
@@ -1002,6 +1034,16 @@
                 <a href="https://github.com/COPT-Public/cuPDLP-C" class="btn btn-primary" target=&ldquo;blank&rdquo;>
                     <i data-lucide="github"></i>
                     <span>cuPDLP-C</span>
+                </a>
+            </div>
+            <div class="card card-rose text-center">
+                <h2 class="text-xl mb-4">cuPDLPx</h2>
+                <p class="text-sm mb-6">
+                    A further enhanced GPU-based solver for LP using first-order methods
+                </p>
+                <a href="https://github.com/MIT-Lu-Lab/cuPDLPx" class="btn btn-primary" target=&ldquo;blank&rdquo;>
+                    <i data-lucide="github"></i>
+                    <span>View on Github</span>
                 </a>
             </div>
             <div class="card card-rose text-center">
