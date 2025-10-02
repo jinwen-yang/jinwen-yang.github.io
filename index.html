@@ -447,10 +447,10 @@
             <div class="hidden md:flex items-center space-x-4">
                 
                 <!-- External Links -->
-                <!-- <a href="Jinwen_Yang_CV.pdf" class="nav-link" target="_blank">
+                <a href="Jinwen_Yang_CV.pdf" class="nav-link" target="_blank">
                     <i data-lucide="file-text"></i>
                     <span>C.V.</span>
-                </a> -->
+                </a>
                 <a href="https://scholar.google.com/citations?user=ix-D3vcAAAAJ" class="nav-link" target="_blank">
                     <i data-lucide="library"></i>
                     <span>Google Scholar</span>
@@ -475,20 +475,24 @@
                             <span>Home</span>
                         </a>
                         <a href="#researchinterest" class="nav-link">
-                            <i data-lucide="book-open"></i>
+                            <i data-lucide="library"></i>
                             <span>Research Interests</span>
                         </a>
                         <a href="#publications" class="nav-link">
-                            <i data-lucide="book-open"></i>
+                            <i data-lucide="file-text"></i>
                             <span>Publications</span>
                         </a>
                         <a href="#preprints" class="nav-link">
                             <i data-lucide="file-text"></i>
-                            <span>Select Preprints</span>
+                            <span>Preprints</span>
                         </a>
                         <a href="#software" class="nav-link">
                             <i data-lucide="code"></i>
                             <span>Software</span>
+                        </a>
+                        <a href="#teaching" class="nav-link">
+                            <i data-lucide="book-open"></i>
+                            <span>Teaching</span>
                         </a>
                     </div>
                 </div>
@@ -541,17 +545,17 @@
             </a>
             <a href="#preprints" class="nav-link block">
                 <i data-lucide="file-text"></i>
-                <span>Select Preprints</span>
+                <span>Preprints</span>
             </a>
             <a href="#software" class="nav-link block">
                 <i data-lucide="code"></i>
                 <span>Software</span>
             </a>
             <div class="border-t border-amber-800 my-2"></div>
-            <!-- <a href="Jinwen_Yang_CV.pdf" class="nav-link block" target="_blank">
+            <a href="Jinwen_Yang_CV.pdf" class="nav-link block" target="_blank">
                 <i data-lucide="file-text"></i>
                 <span>C.V.</span>
-            </a> -->
+            </a>
             <a href="https://scholar.google.com/citations?user=1KaPl5wAAAAJ" class="nav-link block" target="_blank">
                 <i data-lucide="library"></i>
                 <span>Scholar</span>
@@ -606,9 +610,10 @@
             <div class="bio-content">
                 <h1 class="section-title">Jinwen Yang</h1> 
                 <p>
-                    I am a final-year PhD student in the Department of Statistics at University of Chicago, advised by Prof. <a href="https://mitmgmtfaculty.mit.edu/hlu/" target=&ldquo;blank&rdquo;>Haihao Lu</a>. Previously, I obtained my B.S. in Mathematics and Applied Mathematics from Fudan University.  <br><br>
+                    I am a final-year Ph.D. student at the University of Chicago, advised by Professor <a href="https://mitmgmtfaculty.mit.edu/hlu/" target=&ldquo;blank&rdquo;>Haihao Lu</a>. Previously, I obtained my B.S. in Mathematics and Applied Mathematics from Fudan University.  <br><br>
 
-                    My research focuses on developing computational and mathematical methods for large-scale optimization in operations research, data science, and machine learning. Specifically, I am interested in: (i) designing algorithms that are well-suited to modern computational infrastructure, such as GPUs; and (ii) developing accessible, open-source software that facilitates seamless GPU integration in practical applications. Portions of my work have been adopted and integrated into several leading technology companies and commercial solvers, including Gurobi, NVIDIA, Cardinal Optimizer (COPT), FICO Xpress, Artelys Knitro, and others.
+                    My research interests are in optimization, with a particular focus on optimization algorithms tailored to modern hardware (like GPUs) and intended for practical applications. 
+                    I am excited that our algorithms are now part of many optimization software platforms, including NVIDIA cuOpt and Gurobi.
                 </p>
             </div>
         </section>
@@ -630,7 +635,7 @@
                         <i data-lucide="book-open"></i>
                         <span>Methodology & Theory</span>
                     </h2>
-                    <p class="text-sm text-center">Designing algorithms tailored for modern hardware, with rigorous theoretical foundations</p>
+                    <p class="text-sm text-center">Designing algorithms tailored for modern hardware, with rigorous theoretical guarantees</p>
                 </div>
             </div>
             <div class="card card-rose">
@@ -638,7 +643,7 @@
                     <i data-lucide="wrench"></i>
                     Applications
                 </h2>
-                <p class="text-sm text-center">Accelerating solving of real-world problems in operations research, engineering and data science.</p>
+                <p class="text-sm text-center">Solving practical problems in data science, operations research, and machine learning</p>
             </div>
         </section>
 
@@ -650,18 +655,26 @@
             
             <div class="space-y-6">
                 <div class="card">
-                    <h3 class="text-xl mb-2">cuPDLP. jl: A GPU implementation of restarted primal-dual hybrid gradient for linear programming in Julia
+                    <h3 class="text-xl mb-2">cuPDLP. jl: A GPU Implementation of Restarted Primal-Dual Hybrid Gradient for Linear Programming in Julia
                     </h3>
                     <p class="text-sm mb-2">H. Lu and J. Yang</p>
-                    <p class="text-sm italic mb-4">To appear in Operations Research.</p>
+                    <p class="text-sm italic mb-4">Operations Research, 2025.</p>
                     <div class="publication-links">
                         <a href="https://arxiv.org/abs/2311.12180" class="publication-link" target=&ldquo;blank&rdquo;>
                             <i data-lucide="file-text"></i>
                             <span>preprint</span>
                         </a>
+                        <a href="https://pubsonline.informs.org/doi/10.1287/opre.2024.1069" class="publication-link" target=&ldquo;blank&rdquo;>
+                            <i data-lucide="book-open"></i>
+                            <span>paper</span>
+                        </a>
                         <a href="https://github.com/jinwen-yang/cuPDLP.jl" class="publication-link" target=&ldquo;blank&rdquo;>
                             <i data-lucide="github"></i>
                             <span>software</span>
+                        </a>
+                        <a href="https://www.coin-or.org/2024/10/19/2024-coin-or-cup-winner-cupdlp-jl" class="publication-link" target=&ldquo;blank&rdquo;>
+                            <i data-lucide="trophy"></i>
+                            <span>award</span>
                         </a>
                         <button class="tldr-button" onclick="toggleTldr(this)">
                             <i data-lucide="chevron-down" class="chevron-icon"></i>
@@ -680,7 +693,7 @@
                 <div class="card">
                     <h3 class="text-xl mb-2">A Practical and Optimal First-Order Method for Large-Scale Convex Quadratic Programming</h3>
                     <p class="text-sm mb-2">H. Lu and J. Yang</p>
-                    <p class="text-sm italic mb-4">To appear in Mathematical Programming.</p>
+                    <p class="text-sm italic mb-4">Mathematical Programming, 2025.</p>
                     
                     <div class="publication-links">
                         <a href="https://arxiv.org/abs/2311.07710" class="publication-link" target=&ldquo;blank&rdquo;>
@@ -711,7 +724,7 @@
                 </div>
 
                 <div class="card">
-                    <h3 class="text-xl mb-2">On the geometry and refined rate of primal–dual hybrid gradient for linear programming</h3>
+                    <h3 class="text-xl mb-2">On the Geometry and Refined Rate of Primal-Dual Hybrid Gradient for Linear Programming</h3>
                     <p class="text-sm mb-2">H. Lu and J. Yang</p>
                     <p class="text-sm italic mb-4">Mathematical Programming, 212, 349–387 (2025).</p>
                     
@@ -741,7 +754,7 @@
 
 
                 <div class="card">
-                    <h3 class="text-xl mb-2">A&nbsp; J-symmetric quasi-newton method for minimax problems
+                    <h3 class="text-xl mb-2">A&nbsp; J-Symmetric Quasi-Newton Method for Minimax Problems
                     </h3>
                     <p class="text-sm mb-2">A. Asl, H. Lu and J. Yang</p>
                     <p class="text-sm italic mb-4">Mathematical Programming, 204, 207–254 (2024).</p>
@@ -771,7 +784,7 @@
                 </div>
 
                 <div class="card">
-                    <h3 class="text-xl mb-2">Dimensionality reduction for single cell RNA sequencing data using constrained robust non-negative matrix factorization</h3>
+                    <h3 class="text-xl mb-2">Dimensionality Reduction for Single Cell RNA Sequencing Data using Constrained Robust Nonnegative Matrix Factorization</h3>
                     <p class="text-sm mb-2">S. Zhang, L. Yang, J. Yang, Z. Lin and M. K. Ng</p>
                     <p class="text-sm italic mb-4">NAR genomics and bioinformatics, 2.3 (2020).</p>
                     
@@ -801,10 +814,37 @@
         <section id="preprints" class="py-12">
             <h2 class="section-title mt-12">
                 <!-- <i data-lucide="scroll-text"></i> -->
-                <span>Select Preprints</span>
+                <span>Preprints</span>
             </h2>
 
             <div class="space-y-6">
+                <div class="card">
+                    <h3 class="text-xl mb-2">cuPDLPx: A Further Enhanced GPU-Based First-Order Solver for Linear Programming</h3>
+                    <p class="text-sm mb-2">H. Lu, Z. Peng and J. Yang</p>
+                    <div class="publication-links">
+                        <a href="https://arxiv.org/abs/2507.14051" class="publication-link" target=&ldquo;blank&rdquo;>
+                            <i data-lucide="file-text"></i>
+                            <span>preprint</span>
+                        </a>
+                        <a href="https://github.com/MIT-Lu-Lab/cuPDLPx" class="publication-link" target=&ldquo;blank&rdquo;>
+                            <i data-lucide="github"></i>
+                            <span>software</span>
+                        </a>
+                        <button class="tldr-button" onclick="toggleTldr(this)">
+                            <i data-lucide="chevron-down" class="chevron-icon"></i>
+                            <span>TL;DR</span>
+                        </button>
+                    </div>
+            
+                    <div class="tldr-content">
+                        <div class="p-4">
+                            <p class="text-sm">
+                                cuPDLPx is a new GPU-based linear programming solver incorporating recent algorithmic advances like the restarted Halpern PDHG method and a PID-controlled primal weight update. These innovations, specifically tailored for GPU architectures, result in a 2x to 6x speedup over cuPDLP on standard LP benchmark datasets. The improvements are most pronounced in high-accuracy settings and on harder problem instances.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="card">
                     <h3 class="text-xl mb-2">An Overview of GPU-based First-Order Methods for Linear Programming and Extensions</h3>
                     <p class="text-sm mb-2">H. Lu and J. Yang</p>
@@ -827,34 +867,6 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="space-y-6">
-                    <div class="card">
-                        <h3 class="text-xl mb-2">cuPDLPx: A Further Enhanced GPU-Based First-Order Solver for Linear Programming</h3>
-                        <p class="text-sm mb-2">H. Lu, Z. Peng and J. Yang</p>
-                        <div class="publication-links">
-                            <a href="https://arxiv.org/abs/2507.14051" class="publication-link" target=&ldquo;blank&rdquo;>
-                                <i data-lucide="file-text"></i>
-                                <span>preprint</span>
-                            </a>
-                            <a href="https://github.com/MIT-Lu-Lab/cuPDLPx" class="publication-link" target=&ldquo;blank&rdquo;>
-                                <i data-lucide="github"></i>
-                                <span>software</span>
-                            </a>
-                            <button class="tldr-button" onclick="toggleTldr(this)">
-                                <i data-lucide="chevron-down" class="chevron-icon"></i>
-                                <span>TL;DR</span>
-                            </button>
-                        </div>
-                
-                        <div class="tldr-content">
-                            <div class="p-4">
-                                <p class="text-sm">
-                                    cuPDLPx is a new GPU-based linear programming solver incorporating recent algorithmic advances like the restarted Halpern PDHG method and a PID-controlled primal weight update. These innovations, specifically tailored for GPU architectures, result in a 2x to 6x speedup over cuPDLP on standard LP benchmark datasets. The improvements are most pronounced in high-accuracy settings and on harder problem instances.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
 
                 <div class="card">
                     <h3 class="text-xl mb-2">New Understandings and Computation on Augmented Lagrangian Methods for Low-Rank Semidefinite Programming
@@ -934,7 +946,7 @@
                 </div>
 
                 <div class="card">
-                    <h3 class="text-xl mb-2">PDOT: A practical primal-dual algorithm and a GPU-based solver for optimal transport
+                    <h3 class="text-xl mb-2">PDOT: A Practical Primal-Dual Algorithm and a GPU-Based Solver for Optimal Transport
                     </h3>
                     <p class="text-sm mb-2">H. Lu and J. Yang</p>
                     <div class="publication-links">
@@ -962,7 +974,7 @@
                 </div>
 
                 <div class="card">
-                    <h3 class="text-xl mb-2">cuPDLP-C: A strengthened implementation of cuPDLP for linear programming by C language</h3>
+                    <h3 class="text-xl mb-2">cuPDLP-C: A Strengthened Implementation of cuPDLP for Linear Programming by C Language</h3>
                     <p class="text-sm mb-2">H. Lu, J. Yang, H. Hu, Q. Huangfu, J. Liu, T. Liu, Y. Ye, C. Zhang and D. Ge</p>
                     <div class="publication-links">
                         <a href="https://arxiv.org/abs/2312.14832" class="publication-link" target=&ldquo;blank&rdquo;>
@@ -1011,17 +1023,67 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="card">
+                    <h3 class="text-xl mb-2">On the Infimal Sub-differential Size of Primal-Dual Hybrid Gradient Method and Beyond
+                    </h3>
+                    <p class="text-sm mb-2">H. Lu and J. Yang</p>
+                    <div class="publication-links">
+                        <a href="https://arxiv.org/abs/2206.12061" class="publication-link" target=&ldquo;blank&rdquo;>
+                            <i data-lucide="file-text"></i>
+                            <span>preprint</span>
+                        </a>
+                        <button class="tldr-button" onclick="toggleTldr(this)">
+                            <i data-lucide="chevron-down" class="chevron-icon"></i>
+                            <span>TL;DR</span>
+                        </button>
+                    </div>
+            
+                    <div class="tldr-content">
+                        <div class="p-4">
+                            <p class="text-sm">
+                                We introduce the infimal sub-differential size (IDS) as a new progress metric for the primal-dual hybrid gradient method (PDHG). Unlike traditional metrics such as duality gap, IDS is always finite, computable from current iterates, and monotonically decreasing, with a sublinear convergence for general convex-concave problems and linear convergence under metric sub-regularity.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="text-xl mb-2">Nearly optimal linear convergence of stochastic primal-dual methods for linear programming
+                    </h3>
+                    <p class="text-sm mb-2">H. Lu and J. Yang</p>
+                    <div class="publication-links">
+                        <a href="https://arxiv.org/abs/2111.05530" class="publication-link" target=&ldquo;blank&rdquo;>
+                            <i data-lucide="file-text"></i>
+                            <span>preprint</span>
+                        </a>
+                        <button class="tldr-button" onclick="toggleTldr(this)">
+                            <i data-lucide="chevron-down" class="chevron-icon"></i>
+                            <span>TL;DR</span>
+                        </button>
+                    </div>
+            
+                    <div class="tldr-content">
+                        <div class="p-4">
+                            <p class="text-sm">
+                                We develop a restarted stochastic extragradient method with variance reduction for solving sharp primal-dual problems such as linear programming. The method achieves linear convergence with high probability, and matches known lower bounds up to logarithmic terms.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
-        </section>
+        </div>
 
         
-
-        <h2 class="section-title mt-12">
+        <section id="software" class="py-12">
+        <h2 class="section-title mt-12 mb-0">
             <!--<i data-lucide="code"></i>-->
             <span>Software</span>
         </h2>
-        <section id="software" class="grid-2 py-1">
+        </section>
+        <div class="grid-2">
             <div class="card card-rose text-center">
                 <h2 class="text-xl mb-4">cuPDLP</h2>
                 <p class="text-sm mb-6">
@@ -1066,7 +1128,31 @@
                     <span>View on GitHub</span>
                 </a>
             </div>
+        </section>
 
+        <section id="teaching" class="py-12">
+            <h2 class="section-title mt-12">
+                <!-- <i data-lucide="scroll-text"></i> -->
+                <span>Teaching Experience</span>
+            </h2>
+            
+            <div class="space-y-6">
+                <div class="card">
+                    <p style="font-weight: bold;">I have been a teaching assistant for:<br></p>
+
+                    <p style="text-indent: 30px;">(Ph.D.) Modern Large-Scale Optimization -- Theory and Computation: <span style="font-size: smaller;">Spring 2023</span><br></p>
+
+                    <p style="text-indent: 30px;">(Master/Ph.D.) Multivariate Statistical Analysis -- Applications and Techniques: <span style="font-size: smaller;">Spring 2022</span><br></p>
+
+                    <p style="text-indent: 30px;">(Master/Ph.D.) Modern Methods in Applied Statistics: <span style="font-size: smaller;">Spring 2024, Spring 2025</span><br></p>
+
+                    <p style="text-indent: 30px;">(Undergraduate) Statistical Methods and Applications: <span style="font-size: smaller;">Winter 2021, Autumn 2021, Spring 2023</span><br></p>
+                    
+                    <p style="text-indent: 30px;">(Undergraduate) Linear Models and Experimental Design: <span style="font-size: smaller;">Spring 2021</span><br></p>
+
+                    <p style="text-indent: 30px;">(Undergraduate) Statistical Theory and Methods: <span style="font-size: smaller;">Winter 2023, Winter 2024</span><br></p>                  
+                </div>
+            </div>
         </section>
     </main>
 
@@ -1074,7 +1160,7 @@
         <div class="container">
             <div class="contact-info mb-4">
                 <i data-lucide="map-pin"></i>
-                <span>University of Chicago</span>
+                <span>The University of Chicago</span>
             </div>
             <p class="text-sm">© 2025 Jinwen Yang</p>
         </div>
