@@ -676,17 +676,6 @@
                             <i data-lucide="trophy"></i>
                             <span>award</span>
                         </a>
-                        <button class="tldr-button" onclick="toggleTldr(this)">
-                            <i data-lucide="chevron-down" class="chevron-icon"></i>
-                            <span>TL;DR</span>
-                        </button>
-                    </div>
-                    <div class="tldr-content">
-                        <div class="p-4">
-                            <p class="text-sm">
-                                cuPDLP.jl is the first open-source GPU-based solver for linear programming using restarted PDHG, offering a new horse in the race alongside commercial solvers like Gurobi. It shows that first-order methods on GPUs can scale efficiently and solve large LPs with competitive performance.
-                            </p>
-                        </div>
                     </div>
                 </div>
                 
@@ -708,18 +697,6 @@
                             <i data-lucide="github"></i>
                             <span>software</span>
                         </a>
-                        <button class="tldr-button" onclick="toggleTldr(this)">
-                            <i data-lucide="chevron-down" class="chevron-icon"></i>
-                            <span>TL;DR</span>
-                        </button>
-                    </div>
-            
-                    <div class="tldr-content">
-                        <div class="p-4">
-                            <p class="text-sm">
-                                We propose a restarted and accelerated first-order method for solving large-scale convex quadratic programs, which achieves optimal linear convergence and is fully factorization-free. Backed by the theory, the open-source solver PDQP.jl delivers strong performance on both CPU and GPU across standard and large-scale QP benchmarks.
-                            </p>
-                        </div>
                     </div>
                 </div>
 
@@ -737,18 +714,6 @@
                             <i data-lucide="book-open"></i>
                             <span>paper</span>
                         </a>
-                        <button class="tldr-button" onclick="toggleTldr(this)">
-                            <i data-lucide="chevron-down" class="chevron-icon"></i>
-                            <span>TL;DR</span>
-                        </button>
-                    </div>
-            
-                    <div class="tldr-content">
-                        <div class="p-4">
-                            <p class="text-sm">
-                                We provide the refined complexity analysis of the primal-dual hybrid gradient (PDHG) method for linear programming, revealing a two-stage convergence behavior driven by local geometry rather than the loose global Hoffman constant. Our results explain why PDHG scales efficiently in practice, even for degenerate LPs.
-                            </p>
-                        </div>
                     </div>
                 </div>
 
@@ -768,18 +733,6 @@
                             <i data-lucide="book-open"></i>
                             <span>paper</span>
                         </a>
-                        <button class="tldr-button" onclick="toggleTldr(this)">
-                            <i data-lucide="chevron-down" class="chevron-icon"></i>
-                            <span>TL;DR</span>
-                        </button>
-                    </div>
-            
-                    <div class="tldr-content">
-                        <div class="p-4">
-                            <p class="text-sm">
-                                We propose a novel quasi-Newton method tailored for minimax optimization by leveraging the J-symmetric structure of the problem's second-order derivatives. Our method generalizes the PSB update, ensures efficient and stable rank-2 updates, and achieves both local superlinear and global convergence.
-                            </p>
-                        </div>
                     </div>
                 </div>
 
@@ -793,19 +746,7 @@
                             <i data-lucide="book-open"></i>
                             <span>paper</span>
                         </a>
-                        <!-- <button class="tldr-button" onclick="toggleTldr(this)">
-                            <i data-lucide="chevron-down" class="chevron-icon"></i>
-                            <span>TL;DR</span>
-                        </button> -->
                     </div>
-            
-                    <!-- <div class="tldr-content">
-                        <div class="p-4">
-                            <p class="text-sm">
-
-                            </p>
-                        </div>
-                    </div> -->
                 </div>
 
             </div>
@@ -830,18 +771,6 @@
                             <i data-lucide="github"></i>
                             <span>software</span>
                         </a>
-                        <button class="tldr-button" onclick="toggleTldr(this)">
-                            <i data-lucide="chevron-down" class="chevron-icon"></i>
-                            <span>TL;DR</span>
-                        </button>
-                    </div>
-            
-                    <div class="tldr-content">
-                        <div class="p-4">
-                            <p class="text-sm">
-                                cuPDLPx is a new GPU-based linear programming solver incorporating recent algorithmic advances like the restarted Halpern PDHG method and a PID-controlled primal weight update. These innovations, specifically tailored for GPU architectures, result in a 2x to 6x speedup over cuPDLP on standard LP benchmark datasets. The improvements are most pronounced in high-accuracy settings and on harder problem instances.
-                            </p>
-                        </div>
                     </div>
                 </div>
 
@@ -853,18 +782,6 @@
                             <i data-lucide="file-text"></i>
                             <span>preprint</span>
                         </a>
-                        <button class="tldr-button" onclick="toggleTldr(this)">
-                            <i data-lucide="chevron-down" class="chevron-icon"></i>
-                            <span>TL;DR</span>
-                        </button>
-                    </div>
-            
-                    <div class="tldr-content">
-                        <div class="p-4">
-                            <p class="text-sm">
-                                We overview the emerging field of GPU-based first-order methods for linear programming, with a focus on the design, theory, and performance of cuPDLP. This work positions GPU-accelerated solvers as a scalable, competitive alternative to traditional CPU-based methods, opening new possibilities for large-scale optimization based on GPUs.
-                            </p>
-                        </div>
                     </div>
                 </div>
 
@@ -877,18 +794,6 @@
                             <i data-lucide="file-text"></i>
                             <span>preprint</span>
                         </a>
-                        <button class="tldr-button" onclick="toggleTldr(this)">
-                            <i data-lucide="chevron-down" class="chevron-icon"></i>
-                            <span>TL;DR</span>
-                        </button>
-                    </div>
-            
-                    <div class="tldr-content">
-                        <div class="p-4">
-                            <p class="text-sm">
-                                We establish new theoretical foundations for augmented Lagrangian methods (ALM) in low-rank semidefinite programming by showing that ALM subproblems inherit key structural properties from the original SDP and can be solved globally via gradient descent. Building on these insights, we design ALORA, a GPU-accelerated, rank-adaptive solver that scales to SDPs with tens of millions of variables.
-                            </p>
-                        </div>
                     </div>
                 </div>
 
@@ -906,18 +811,6 @@
                             <i data-lucide="github"></i>
                             <span>software</span>
                         </a>
-                        <button class="tldr-button" onclick="toggleTldr(this)">
-                            <i data-lucide="chevron-down" class="chevron-icon"></i>
-                            <span>TL;DR</span>
-                        </button>
-                    </div>
-            
-                    <div class="tldr-content">
-                        <div class="p-4">
-                            <p class="text-sm">
-                                MPAX is a JAX-based mathematical programming solver optimized for machine learning workflows, offering GPU-accelerated, batchable, and differentiable first-order methods. It features such as warm start, auto-diff, and device parallelism.
-                            </p>
-                        </div>
                     </div>
                 </div>
 
@@ -930,18 +823,6 @@
                             <i data-lucide="file-text"></i>
                             <span>preprint</span>
                         </a>
-                        <button class="tldr-button" onclick="toggleTldr(this)">
-                            <i data-lucide="chevron-down" class="chevron-icon"></i>
-                            <span>TL;DR</span>
-                        </button>
-                    </div>
-            
-                    <div class="tldr-content">
-                        <div class="p-4">
-                            <p class="text-sm">
-                                We propose restarted Halpern PDHG, a matrix-free primal-dual algorithm for linear programming, which achieves accelerated convergence for both feasible and infeasible LPs. Our GPU-based solver built on the proposed algorithm outperforms existing matrix-free methods like cuPDLP, offering practical speedups and refined theoretical guarantees including two-stage acceleration and improved infeasibility detection.
-                            </p>
-                        </div>
                     </div>
                 </div>
 
@@ -958,18 +839,6 @@
                             <i data-lucide="github"></i>
                             <span>software</span>
                         </a>
-                        <button class="tldr-button" onclick="toggleTldr(this)">
-                            <i data-lucide="chevron-down" class="chevron-icon"></i>
-                            <span>TL;DR</span>
-                        </button>
-                    </div>
-            
-                    <div class="tldr-content">
-                        <div class="p-4">
-                            <p class="text-sm">
-                                We develop PDOT, a first-order method for large-scale discrete optimal transport that exploits problem structure for efficiency. It offers provable local linear convergence with polynomial complexity, and the open-source PDOT.jl delivers order-of-magnitude speedups over Gurobi while achieving much higher accuracy than Sinkhorn on benchmarks.
-                            </p>
-                        </div>
                     </div>
                 </div>
 
@@ -985,18 +854,6 @@
                             <i data-lucide="github"></i>
                             <span>software</span>
                         </a>
-                        <button class="tldr-button" onclick="toggleTldr(this)">
-                            <i data-lucide="chevron-down" class="chevron-icon"></i>
-                            <span>TL;DR</span>
-                        </button>
-                    </div>
-            
-                    <div class="tldr-content">
-                        <div class="p-4">
-                            <p class="text-sm">
-                                cuPDLP-C brings GPU-accelerated first-order methods for linear programming to new heights by reimplementing cuPDLP in C, achieving major speedups over the Julia version and demonstrating competitiveness, even outperforming commercial solvers, on massive LP benchmarks.
-                            </p>
-                        </div>
                     </div>
                 </div>
 
@@ -1009,18 +866,6 @@
                             <i data-lucide="file-text"></i>
                             <span>preprint</span>
                         </a>
-                        <button class="tldr-button" onclick="toggleTldr(this)">
-                            <i data-lucide="chevron-down" class="chevron-icon"></i>
-                            <span>TL;DR</span>
-                        </button>
-                    </div>
-            
-                    <div class="tldr-content">
-                        <div class="p-4">
-                            <p class="text-sm">
-                                Motivated by the desire for a teachable explanation in a graduate course, we develop a unified perspective showing that PPM, PDHG, and ADMM are all instances of the same generic algorithm under a norm change, clarifying intuition and enabling a four-line proof of their convergence rates.
-                            </p>
-                        </div>
                     </div>
                 </div>
 
@@ -1033,18 +878,6 @@
                             <i data-lucide="file-text"></i>
                             <span>preprint</span>
                         </a>
-                        <button class="tldr-button" onclick="toggleTldr(this)">
-                            <i data-lucide="chevron-down" class="chevron-icon"></i>
-                            <span>TL;DR</span>
-                        </button>
-                    </div>
-            
-                    <div class="tldr-content">
-                        <div class="p-4">
-                            <p class="text-sm">
-                                We introduce the infimal sub-differential size (IDS) as a new progress metric for the primal-dual hybrid gradient method (PDHG). Unlike traditional metrics such as duality gap, IDS is always finite, computable from current iterates, and monotonically decreasing, with a sublinear convergence for general convex-concave problems and linear convergence under metric sub-regularity.
-                            </p>
-                        </div>
                     </div>
                 </div>
 
@@ -1057,18 +890,6 @@
                             <i data-lucide="file-text"></i>
                             <span>preprint</span>
                         </a>
-                        <button class="tldr-button" onclick="toggleTldr(this)">
-                            <i data-lucide="chevron-down" class="chevron-icon"></i>
-                            <span>TL;DR</span>
-                        </button>
-                    </div>
-            
-                    <div class="tldr-content">
-                        <div class="p-4">
-                            <p class="text-sm">
-                                We develop a restarted stochastic extragradient method with variance reduction for solving sharp primal-dual problems such as linear programming. The method achieves linear convergence with high probability, and matches known lower bounds up to logarithmic terms.
-                            </p>
-                        </div>
                     </div>
                 </div>
 
